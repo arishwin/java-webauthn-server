@@ -50,6 +50,20 @@ jobs:
         java-version: ${{ matrix.java }}
         distribution: ${{ matrix.distribution }}
 
+# ... (existing content)
+
+    - name: Build archives
+      run: ./gradlew assemble
+
+    - name: Upload JAR artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: compiled-jar
+        path: build/libs/*.jar  # Adjust this to the actual path of your JAR file
+
+# ... (existing content) 
+    
+
     - name: Run tests against JDK17-compiled code
       run: ./gradlew test --exclude-task compileJava
 
