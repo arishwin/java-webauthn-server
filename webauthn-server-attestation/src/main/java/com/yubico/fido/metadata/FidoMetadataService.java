@@ -527,12 +527,6 @@ public final class FidoMetadataService implements AttestationTrustSource {
               }
             });
 
-    log.debug(
-        "findEntries(certSubjectKeyIdentifiers = {}, aaguid = {}, nonzeroAaguid= {})",
-        certSubjectKeyIdentifiers,
-        aaguid,
-        nonzeroAaguid);
-
     final Set<MetadataBLOBPayloadEntry> result =
         Stream.concat(
                 nonzeroAaguid
@@ -555,11 +549,6 @@ public final class FidoMetadataService implements AttestationTrustSource {
                             nonzeroAaguid.orElse(null))))
             .collect(Collectors.toSet());
 
-    log.debug(
-        "findEntries(certSubjectKeyIdentifiers = {}, aaguid = {}) => {} matches",
-        certSubjectKeyIdentifiers,
-        aaguid,
-        result.size());
     return result;
   }
 
