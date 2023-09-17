@@ -21,6 +21,17 @@ jobs:
       with:
         java-version: ${{ matrix.java }}
 
+    - name: Build archives
+      run: ./gradlew assemble
+
+    - name: Upload JAR artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: compiled-jar
+        path: build/libs/*.jar
+
+
+
     - name: Run tests
       run: ./gradlew cleanTest test
 
