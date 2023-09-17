@@ -18,7 +18,7 @@ plugins {
 import io.franzbecker.gradle.lombok.LombokPlugin
 import io.franzbecker.gradle.lombok.task.DelombokTask
 
-version = '1.12.1'
+version = '1.12.1.1'
 
 rootProject.description = "Metadata root for the com.yubico:webauthn-server-* module family"
 
