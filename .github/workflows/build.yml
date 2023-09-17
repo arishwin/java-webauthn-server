@@ -24,6 +24,10 @@ jobs:
     - name: Build archives
       run: ./gradlew assemble
 
+    - name: List files in build/libs
+      run: ls -l build/libs
+
+
     - name: Upload JAR artifact
       uses: actions/upload-artifact@v3
       with:
