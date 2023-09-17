@@ -181,32 +181,32 @@ subprojects { project ->
       from sourceSets.main.allSource
     }
 
-    task delombok(type: DelombokTask, dependsOn: classes) {
-      ext.outputDir = file("${buildDir}/delombok")
-      outputs.dir outputDir
-      sourceSets.main.java.srcDirs.each {
-        if (!it.exists()) {
-          it.mkdirs()
-        }
-        inputs.dir it
-        args(it, '-d', outputDir)
-      }
-      doFirst {
-        outputDir.deleteDir()
-      }
-    }
+//    task delombok(type: DelombokTask, dependsOn: classes) {
+//      ext.outputDir = file("${buildDir}/delombok")
+//      outputs.dir outputDir
+//      sourceSets.main.java.srcDirs.each {
+//        if (!it.exists()) {
+//          it.mkdirs()
+//        }
+//        inputs.dir it
+//        args(it, '-d', outputDir)
+//      }
+//      doFirst {
+//        outputDir.deleteDir()
+//      }
+//    }
 
-    javadoc {
-      dependsOn delombok
-      source = delombok.outputDir
-      options.encoding = 'UTF-8'
-      options.addStringOption('charset', 'UTF-8')
-    }
-
-    task javadocJar(type: Jar) {
-      archiveClassifier = 'javadoc'
-      from javadoc
-    }
+//    javadoc {
+//      dependsOn delombok
+//      source = delombok.outputDir
+//      options.encoding = 'UTF-8'
+//      options.addStringOption('charset', 'UTF-8')
+//    }
+//
+//    task javadocJar(type: Jar) {
+//      archiveClassifier = 'javadoc'
+//      from javadoc
+//    }
 
     // TODO: Revert this if statement in the next major release
     if (project.projectDir.name != "webauthn-server-core-bundle") {
@@ -230,7 +230,7 @@ subprojects { project ->
       publications {
         jars(MavenPublication) {
           from components.java
-          artifact javadocJar
+//          artifact javadocJar
           artifact sourcesJar
 
           pom {
