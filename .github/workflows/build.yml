@@ -27,12 +27,6 @@ jobs:
     - name: List root directory
       run: ls -lR
 
-    - name: Build webauthn-server-core
-      run: ./gradlew :webauthn-server-core:jar
-
-    - name: Build yubico-util
-      run: ./gradlew :yubico-util:jar
-
 
     - name: Upload JAR artifact
       uses: actions/upload-artifact@v3
