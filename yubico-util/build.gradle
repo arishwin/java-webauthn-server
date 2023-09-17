@@ -6,6 +6,8 @@ plugins {
   id 'io.github.cosmicsilence.scalafix'
 }
 
+version = '1.12.1'
+
 description = 'Yubico internal utilities'
 
 project.ext.publishMe = true

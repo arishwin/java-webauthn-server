@@ -7,6 +7,8 @@ plugins {
   id 'io.github.cosmicsilence.scalafix'
 }
 
+version = '1.12.1'
+
 description = 'Yubico WebAuthn server core API (fewer dependencies)'
 
 project.ext.publishMe = true
