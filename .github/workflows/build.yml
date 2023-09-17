@@ -31,8 +31,8 @@ jobs:
     - name: Upload JAR artifact
       uses: actions/upload-artifact@v3
       with:
-        name: compiled-jar
-        path: **/build/libs/*.jar
+        name: compiled-jars
+        path: '**/build/libs/*.jar'
 
 
 
