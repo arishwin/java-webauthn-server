@@ -22,10 +22,10 @@ jobs:
         java-version: ${{ matrix.java }}
 
     - name: Build archives
-      run: ./gradlew assemble
+      run: ./gradlew assemble --debug
 
-    - name: List files in build/libs
-      run: ls -l build/libs
+    - name: List root directory
+      run: ls -lR
 
 
     - name: Upload JAR artifact
