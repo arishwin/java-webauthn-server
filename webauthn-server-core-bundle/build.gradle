@@ -4,6 +4,7 @@ plugins {
   id 'signing'
 }
 
+version='1.12.1.1'
 description = 'Yubico WebAuthn server core API'
 
 project.ext.publishMe = true
