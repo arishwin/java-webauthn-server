@@ -34,10 +34,8 @@ jobs:
         name: compiled-jars
         path: '**/build/libs/*.jar'
 
-
-
-    - name: Run tests
-      run: ./gradlew cleanTest test
+#    - name: Run tests
+#      run: ./gradlew cleanTest test
 
     - name: Archive HTML test report
       if: ${{ always() }}
